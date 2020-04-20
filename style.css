@@ -37,8 +37,17 @@ a{
 /* horizontal nav bar  */
 
 #navbar{
-    border:2px sienna solid;
+    border-right:2px #3d3d3d solid;
     padding:10px 2px;
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 300px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: rgb(202, 202, 202); /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
 }
 
 #navbar li{
@@ -64,19 +73,28 @@ a{
 
 
 #main-doc{
-    /* float: right; */
-    /* width:72%; */
+    margin-left: 300px;
     padding: 15px;
-    border:2px solid firebrick;
+    /* border:2px solid firebrick; */
+    background-image: linear-gradient(83deg,#a4dee0,#dddddd);
 }
 
 .main-section{
     border: grey 2px solid;
+    background-image: linear-gradient(44deg,#fffeb8,#fff2f2);
+    margin: 10px;
+    box-shadow: 2px 5px 5px rgb(119, 119, 119);
+}
+
+.main-section:hover{
+    background-image: linear-gradient(44deg,#fcfa98,#ffcaca);
+    transform: scale(1.02);
+    transition: ease .2s;
 }
 
 .desc{
     margin: 20px;
-    border: tomato 2px solid;
+    /* border: tomato 2px solid; */
     padding: 10px;
     font-size: 1.3em;
 }
@@ -84,12 +102,14 @@ a{
 .code ,.code ul {
     margin: 30px;
     border: 2px solid slategray;
+    background: rgb(255, 253, 247);
     padding: 10px;
     font-family: 'Source Code Pro', monospace;
     font-size: .8em;
 }
 
  .main-section ul{
+    background: rgb(255, 253, 247);
     list-style: decimal;
     padding: 30px;
     margin: 30px;
@@ -104,6 +124,25 @@ a{
         flex-direction: column;
     }
     
+    #navbar{
+        position: absolute;
+        top:0;
+        height: 50%;
+        width:99%;
+    }
+
+    #main-doc{
+        padding: 0;
+        position: absolute;
+        right:5px;
+        top:370px;
+        width:98%;
+    }
+
+    .main-section header{
+        text-align: center;
+    }
+
     #navbar .nav-link{
         border-bottom: #7c7c7c 2px solid;
         border-top: #a1a1a1 2px solid;
