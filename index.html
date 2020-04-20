@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>KSR Pydoc</title>
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <header id="logo">KSR Pydoc</header>
+            <li><a href="#" class="nav-link">Introduction </a></li>
+            <li><a href="#email" class="nav-link">Sending Email</a></li>
+            <li><a href="#os" class="nav-link">Python OS Module</a></li>
+            <li><a href="#assert" class="nav-link">Python Assert Keyword</a></li>
+            <li><a href="#generators" class="nav-link">Python Generators</a></li>
+            <li><a href="#statistics" class="nav-link">Python statistics module</a></li>
+            <li><a href="#sys" class="nav-link">Python sys module</a></li>
+            <li><a href="#random" class="nav-link">Python Random module</a></li>
+            <li><a href="#regex" class="nav-link">Python Regular Expressions</a></li>
+            <li><a href="#magic" class="nav-link">Python magic method</a></li>
+        </ul>
+    </nav>
+    
+    <main id="main-doc">
+        <section class="main-section" id="email">
+            <header>Emails in Python</header>
+            <p class="desc">
+                Sending Mail Transfer Protocol (SMTP) is used as a protocol to handle the email transfer using python. It is used to route emails between email servers.
+                Python provides smtplib module, which defines an SMTP client session object used for the purpose of sending emails to an internet machine. For this purpose, we have to import the smtplib module using the import statement.
+            </p>            
+            <p class ="code">
+                
+                #!/usr/bin/python3 <br> 
+                import smtplib  <br>
+                sender_mail = 'sender@fromdomain.com'  <br>
+                receivers_mail = ['reciever@todomain.com'] <br> 
+                message = """From: From Person %s <br>
+                To: To Person %s <br>
+                Subject: Sending SMTP e-mail  <br>
+                This is a test e-mail message. <br>
+                """%(sender_mail,receivers_mail)  <br>
+                try:  <br>
+                smtpObj = smtplib.SMTP('localhost')  <br>
+                smtpObj.sendmail(sender_mail, receivers_mail, message)  <br>
+                print("Successfully sent email")  <br>
+                except Exception:  <br>
+                print("Error: unable to send email")  <br>
+                
+            </p>
+        </section>
+        <section class="main-section" id="os">
+            <header>Os Module</header>
+            <p class="desc">
+                The python OS module provides functions used for interacting with the operating system and also get related information about it. The OS comes under Python's standard utility modules. This module offers a portable way of using operating system dependent functionality.
+            </p>
+            <p class="code">
+                
+                import os   <br>
+                fd = "python.txt"  <br>
+                os.rename(fd,'Python1.txt')   <br>
+                os.rename(fd,'Python1.txt')   <br>
+                
+            </p>
+        </section>
+        <section class="main-section" id="assert">
+            <header>Python Assert Keyword</header>
+            <p class="desc">Python assert keyword is defined as a debugging tool that tests a condition. The Assertions are mainly the assumption that asserts or state a fact confidently in the program. For example, while writing a division function, the divisor should not be zero, and you assert that divisor is not equal to zero.</p>
+            <p class="code">
+                
+                def avg(scores):  <br>
+                assert len(scores) != 0,"The List is empty."  <br>
+                return sum(scores)/len(scores)  <br>
+                scores2 = [67,59,86,75,92]  <br>
+                print("The Average of scores2:",avg(scores2))  <br>
+                scores1 = []  <br>
+                print("The Average of scores1:",avg(scores1))  <br>
+                
+            </p>
+        </section>
+        <section class="main-section" id="generators">
+            <header>Python Generators</header>
+            <p class="desc">
+                Python Generators are the functions that return the traversal object and used to create iterators. It traverses the entire items at once. The generator can also be an expression in which syntax is similar to the list comprehension in Pytho
+            </p>
+            <p class="code">
+                
+                def infinite_sequence():  <br>
+                num = 0  <br>
+                while True:  <br>
+                yield num  <br>
+                num += 1  <br>
+                
+                for i in infinite_sequence():  <br>
+                print(i)  <br>
+                
+            </p>
+        </section>
+        <section class="main-section" id="statistics">
+            <header>Python statistics module</header>
+            <p class="desc">
+                Python statistics module provides the functions to mathematical statistics of numeric data. There are some popular statistical functions defined in this module.
+            </p>
+            <p class="code">
+                
+                import statistics     <br>
+                # simple list of a set of integers   <br>
+                set1 = [4, 6, 2, 5, 7, 7]     <br>
+                # Note: low median will always be a member of the data-set.     <br>
+                # Print low median of the data-set   <br>
+                print("Low median of data-set is % s "   <br>
+                % (statistics.median_low(set1))) <br>
+                
+            </p>
+        </section>
+        <section class="main-section" id="sys">
+            <header>Python sys module</header>
+            <p class="desc">
+                The python sys module provides functions and variables which are used to manipulate different parts of the Python Runtime Environment. It lets us access system-specific parameters and functions.
+            </p>
+                <ul>
+                    <li>sys.modules</li>
+                    <li>sys.argv  </li>
+                    <li>sys.base_exec_prefix</li>
+                    <li>sys.base_prefix</li>
+                    <li>sys.byteorder</li>
+                    <li>sys.maxsize</li>
+                    <li>sys.path</li>
+                </ul>
+        </section>
+        <section class="main-section" id="random">
+            <header>Python Random module</header>
+            <p class="desc">
+                The Python random module functions depend on a pseudo-random number generator function random(), which generates the float number between 0.0 and 1.0.
+            </p>
+            <p class="code">
+                
+                random.randint()<br>
+                This function returns a random integer between the specified integers.<br>
+                random.randrange()<br>
+                This function returns a randomly selected element from the range created by the start, stop, and step arguments. Value of start is 0 by default.<br>
+                random.choice()<br>
+                This function returns a randomly selected element from a non-empty sequence.<br>
+                random.shuffle()<br>
+                This function randomly reorders the elements in the list.<br>
+                
+            </p>
+        </section>
+        <section class="main-section" id="regex">
+            <header>Python Regular Expressions</header>
+            <p class="desc">
+                The regular expressions can be defined as the sequence of characters which are used to search for a pattern in a string. The module re provides the support to use regex in the python program. The re module throws an exception if there is some error while using the regular expression.
+            </p>
+            <p class="code">
+                
+                import re  <br>
+                str = "How are you. How is everything"                    <br>
+                matches = re.search("How", str)  <br>
+                print(matches.span())  <br>
+                print(matches.group())  <br>
+                print(matches.string)  <br>
+                
+            </p>
+        </section>
+        <section class="main-section" id="magic">
+            <header>Python magic method</header>
+            <p class="desc">
+                Python magic method is defined as the special method which adds "magic" to a class. It starts and ends with double underscores, for example, _init_ or _str_.
+            </p>
+                <ul>
+                    <li>
+                        <h2>__init__</h2>
+                        The _init_ method is called after the instance of the class has been created but before it returned to the caller. It is invoked without any call, when an instance of the class is created like constructors in other programming languages such as C++, Java, C#, PHP, etc. These methods are also known as initialize and are called after _new_. Its where you should initialize the instance variables.
+                    </li>
+                    <li>
+                        <h2> __str__</h2>
+                        This function computes "informal" or a nicely printable string representation of an object and must return a string object.
+                    </li>
+                    <li>
+                        <h2> __repr__</h2>
+                        This function is called by the repr() built-in function to compute the "official" string representation of an object and returns a machine-readable representation of a type. The goal of the _repr_ is to be unambiguous.
+                    </li>
+                    <li>
+                        <h2> __len__</h2>
+                        This function should return the length of an object.
+                    </li>
+                    <li>
+                        <h2>__call__</h2>
+                        We can make an object callable by adding the _call_ magic method, and it is another method that is not needed quite as often is _call_.
+                        If defined in a class, then that class can be called. But if it was a function, instance itself rather than modifying.
+                    </li>
+                    <li>
+                        <h2>__del__</h2>
+                        Just as _init_, which is a constructor method, _del_ is like a destructor. If you have opened a file in _init _, then _del_ can close it.
+                    </li>
+                    <li>
+                        <h2>__bytes__</h2>
+                        It offers to compute a byte-string representation of an object and should return a string object.
+                    </li>
+                    <li>
+                        <h2>__ge__</h2>
+                        This method gets invoked when >= operator is used and returns True or False.
+                    </li>
+                    <li>
+                        <h2>__neg__</h2>
+                        This function gets called for the unary operator.
+                    </li>
+                    <li>
+                        <h2>__ipow__</h2>
+                        This function gets called on the exponents with arguments. e.g. a**=b.
+                    </li>
+                    <li>
+                        <h2>__le__</h2>
+                        This function gets called on comparison using <= operator.
+                    </li>
+                    <li>
+                        <h2>_nonzero_</h2>
+                        This function returns the Boolean value of the object. It gets invoked when the bool (self) function is called.
+                    </li>      
+                </ul>   
+            </section>      
+        </main>
+    </body>
+    </html>

@@ -1,0 +1,116 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400);
+@import url(https://fonts.googleapis.com/css?family=Berkshire+Swash);
+
+/* resseting spacing */
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+/* body  | globals */
+
+#logo{
+    text-align: center;
+    margin-left: 20px;
+    font-family: 'Berkshire Swash', cursive;
+    font-weight: 900;
+}
+
+body{
+    display: flex;
+    flex-direction: row;
+}
+
+header{
+    font-size: 2em;
+    margin: 20px;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+/* horizontal nav bar  */
+
+#navbar{
+    border:2px sienna solid;
+    padding:10px 2px;
+}
+
+#navbar li{
+    list-style: none;
+}
+
+#navbar .nav-link{
+    border-top: #868686 2px solid;
+    border-bottom: #868686 2px solid;
+    padding: 15px 50px;
+    display: block;
+    width: 200px;
+    text-align: center;
+}
+
+#navbar .nav-link:hover{
+    background: #383838;
+    color: #f0f0f0;
+    transition: ease 0.2s;
+}
+
+/* main  */
+
+
+#main-doc{
+    /* float: right; */
+    /* width:72%; */
+    padding: 15px;
+    border:2px solid firebrick;
+}
+
+.main-section{
+    border: grey 2px solid;
+}
+
+.desc{
+    margin: 20px;
+    border: tomato 2px solid;
+    padding: 10px;
+    font-size: 1.3em;
+}
+
+.code ,.code ul {
+    margin: 30px;
+    border: 2px solid slategray;
+    padding: 10px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: .8em;
+}
+
+ .main-section ul{
+    list-style: decimal;
+    padding: 30px;
+    margin: 30px;
+    border: 2px solid slategray;
+}
+
+
+/* media */
+
+@media (max-width:650px){
+    body{
+        flex-direction: column;
+    }
+    
+    #navbar .nav-link{
+        border-bottom: #7c7c7c 2px solid;
+        border-top: #a1a1a1 2px solid;
+        display: block;
+        width: 82%;
+        margin-left: -22px;
+        text-align: center;
+    }
+
+}
